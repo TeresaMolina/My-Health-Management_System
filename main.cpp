@@ -1,4 +1,4 @@
-//main.cpp
+//main.cpp - Teresa
 
 #include "meal_plans.h"
 #include "workouts.h"

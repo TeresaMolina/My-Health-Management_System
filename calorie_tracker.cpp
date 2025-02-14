@@ -1,4 +1,4 @@
-// calorie_tracker.cpp
+// calorie_tracker.cpp - Jamari
 #include "calorie_tracker.h"
 #include <iostream>
 void trackCalories() {
