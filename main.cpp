@@ -3,6 +3,7 @@
 #include "meal_plans.h"
 #include "workouts.h"
 #include "calorie_tracker.h"
+#include "authy.h"
 #include <iostream>;
 int main(){
 	while (true){
