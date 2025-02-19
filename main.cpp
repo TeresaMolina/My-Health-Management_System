@@ -11,7 +11,7 @@ int main(){
 int choice;
 		std::cout << "\nWelcome to the App Menu: \n";
 		std::cout << "\n1. Meal Plan Options\n 2. Workout Suggestions\n 3. Track My Calories\n 4. Exit\n";
-		std::cout << "Please Enter Your Choice";
+		std::cout << "\nPlease Enter Your Choice\n";
 		std::cin >> choice;
 
 	switch (choice){
@@ -28,10 +28,10 @@ int choice;
 			break;
 
 		case 4:
-			std::cout << "...Exiting...\n";
+			std::cout << "\n...Exiting...\n";
 			return 0;
 		default:
-			std::cout << "Invalid Choice. Please Try Again.\n";
+			std::cout << "\nInvalid Choice. Please Try Again.\n";
 		}
 	}
 }
