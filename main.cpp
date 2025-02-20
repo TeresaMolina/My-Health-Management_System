@@ -5,7 +5,18 @@
 #include "calorie_tracker.h"
 #include "authy.h"
 #include <iostream>;
+
+
+
 int main(){
+
+	if (!login()){
+		std::cout << "\nWe're Sorry...We couldn't Log In...Exiting...\n";
+		return 0;
+	}
+
+
+
 	while (true){
 	
 int choice;
