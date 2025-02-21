@@ -1,6 +1,9 @@
 //meal_plans.cpp - Daniella
 #include "meal_plans.h"
 #include <iostream>
+
+using namespace std;
+
 void displayMealPlans() {
     int choice;
     cout << "Select a Meal Plan: \n";
