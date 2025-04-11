@@ -2,55 +2,80 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
-void suggestWorkouts()
-{
-    cout << "\nSelect a muscle group for workout suggestions:\n";
-    cout << "1. Chest\n2. Back\n3. Legs\n4. Shoulders\n5. Arms\n6. Core\n";
-    cout << "Enter your choice (1-6): ";
+// Returns a list of all available workouts
+vector<Workout> getAllWorkouts() {
+    return {
+        {"Push-ups", "Chest", "Easy", "None"},
+        {"Bench Press", "Chest", "Medium", "Barbell"},
+        {"Chest Fly", "Chest", "Medium", "Dumbbells"},
+        {"Pull-ups", "Back", "Hard", "None"},
+        {"Bent Over Rows", "Back", "Medium", "Barbell"},
+        {"Lat Pulldowns", "Back", "Medium", "Machine"},
+        {"Squats", "Legs", "Medium", "None"},
+        {"Lunges", "Legs", "Medium", "None"},
+        {"Leg Press", "Legs", "Hard", "Machine"},
+        {"Shoulder Press", "Shoulders", "Medium", "Dumbbells"},
+        {"Lateral Raises", "Shoulders", "Easy", "Dumbbells"},
+        {"Front Raises", "Shoulders", "Easy", "Dumbbells"},
+        {"Bicep Curls", "Arms", "Easy", "Dumbbells"},
+        {"Tricep Dips", "Arms", "Easy", "None"},
+        {"Hammer Curls", "Arms", "Medium", "Dumbbells"},
+        {"Plank", "Core", "Easy", "None"},
+        {"Sit-ups", "Core", "Easy", "None"},
+        {"Russian Twists", "Core", "Medium", "None"}
+    };
+}
 
-    int choice;
-    cin >> choice;
+// Suggest workouts based on selected muscle group
+void suggestWorkouts() {
+    vector<Workout> workouts = getAllWorkouts();
+    string group;
+    vector<Workout> filteredWorkouts;
 
-    vector<string> suggestions;
+    cout << "\nChoose a muscle group:\n";
+    cout << "Chest, Back, Legs, Shoulders, Arms, Core\n";
+    cout << "Enter your choice: ";
+    cin >> group;
 
-    switch (choice)
-    {
-    case 1: // Chest workouts
-        suggestions = {"Push-ups", "Bench Press", "Chest Fly"};
-        break;
+    cout << "\nWorkout Suggestions for " << group << ":\n";
 
-    case 2: // Back workouts
-        suggestions = {"Pull-ups", "Bent Over Rows", "Lat Pulldowns"};
-        break;
-
-    case 3: // Leg workouts
-        suggestions = {"Squats", "Lunges", "Leg Press"};
-        break;
-
-    case 4: // Shoulder workouts
-        suggestions = {"Shoulder Press", "Lateral Raises", "Front Raises"};
-        break;
-
-    case 5: // Arm workouts
-        suggestions = {"Bicep Curls", "Tricep Dips", "Hammer Curls"};
-        break;
-
-    case 6: // Core workouts
-        suggestions = {"Plank", "Sit-ups", "Russian Twists"};
-        break;
-
-    default:
-        cout << "Invalid choice. Showing default workouts.\n";
-        suggestions = {"Burpees", "Jumping Jacks", "Mountain Climbers"};
-        break;
+    for (const auto& w : workouts) {
+        if (w.muscleGroup == group) {
+            filteredWorkouts.push_back(w);
+            cout << filteredWorkouts.size() << ". " << w.name << " | Difficulty: " << w.difficulty
+                 << " | Equipment: " << w.equipment << "\n";
+        }
     }
 
-    cout << "\nWorkout Suggestions:\n";
-    for (const auto &workout : suggestions)
-    {
-        cout << "- " << workout << "\n";
+    if (filteredWorkouts.empty()) {
+        cout << "No workouts found for that muscle group.\n";
+        return;
     }
+
+    // Let user pick a workout (optional final confirmation)
+    int selection;
+    cout << "\nEnter the number of a workout you'd like to confirm: ";
+    cin >> selection;
+
+    if (selection >= 1 && selection <= filteredWorkouts.size()) {
+        cout << "You selected: " << filteredWorkouts[selection - 1].name << " — Let's get to work!\n";
+    } else {
+        cout << "Invalid selection.\n";
+    }
+}
+
+// Display a random workout
+void randomWorkout() {
+    vector<Workout> workouts = getAllWorkouts();
+    srand(static_cast<unsigned int>(time(0)));
+    int index = rand() % workouts.size();
+    const Workout& w = workouts[index];
+
+    cout << "\nRandom Workout:\n";
+    cout << "- " << w.name << " | " << w.muscleGroup << " | " << w.difficulty << " | " << w.equipment << "\n";
 }
