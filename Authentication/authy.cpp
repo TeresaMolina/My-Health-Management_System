@@ -43,7 +43,7 @@ bool checkCredentials( const std::string& username, const std::string& password)
 
 bool login(){
 
-    //entering usernames and passwords
+//entering usernames and passwords
 std::string username, password;
 
 std::cout << "Enter Username: ";
@@ -69,6 +69,7 @@ std::cin >> password;
     }
 }
 
+//register user
 bool registerUser(){
     std::string username, password;
 
