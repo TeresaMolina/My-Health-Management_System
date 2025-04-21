@@ -1,9 +1,9 @@
-
 // meal_plans.cpp - Daniella
 #include "meal_plans.h"
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -49,15 +49,16 @@ void displayFilteredPlans(const string& preference) {
     vector<MealPlan> plans = getAllMealPlans();
     bool found = false;
 
+    string prefLower = preference;
+    transform(prefLower.begin(), prefLower.end(), prefLower.begin(), ::tolower);
+    
     cout << "\nAvailable Meal Plans for '" << preference << "':\n";
 
-    for (const auto& plan : plans) { 
-        string planPref = plan.dietaryPreference;
-        string userPref = preference;
-        for (auto& c : planPref) c = tolower(c);
-        for (auto& c : userPref) c = tolower(c);
+    for (const auto& plan : plans) {
+        string planPrefLower = plan.dietaryPreference;
+        transform(planPrefLower.begin(), planPrefLower.end(), planPrefLower.begin(), ::tolower);
 
-        if (planPref == userPref || userPref == "none") {
+        if (planPrefLower == prefLower || prefLower == "none") {
             found = true;
             cout << "\n=== " << plan.name << " ===\n";
             cout << "Breakfast: " << plan.breakfast << endl;
