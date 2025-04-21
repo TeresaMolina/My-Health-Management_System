@@ -3,6 +3,8 @@
 
 #define MEAL_PLANS_H
 
+#include <string>
+
 void displayFilteredPlans(const std::string& preference);
 
 #endif // MEAL_PLANS_H
