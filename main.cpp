@@ -26,23 +26,10 @@ int main() {
         switch (choice) {
             case 1: {
                 int dietChoice;
-                std::string dietaryPreference;
-                std::cout << "Choose your dietary preference:\n";
-                std::cout << "1. None\n2. Vegetarian\n3. Vegan\n";
-                std::cout << "Enter your choice: ";
-                std::cin >> dietChoice;
-
-                switch (dietChoice) {
-                    case 1: dietaryPreference = "None"; break;
-                    case 2: dietaryPreference = "Vegetarian"; break;
-                    case 3: dietaryPreference = "Vegan"; break;
-                    default:
-                        std::cout << "Invalid choice. Defaulting to 'None'.\n";
-                        dietaryPreference = "None";
-                        break;
-                }
-
-                displayFilteredPlans(dietaryPreference);
+                std::string goal;
+                std::cout << "Enter your weight goal ('lose' or 'gain'): ";
+                std::cin >> goal;
+                displayMealPlan(goal);
                 break;
             }
 
