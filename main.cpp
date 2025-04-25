@@ -13,6 +13,8 @@ int main() {
         return 0;
     }
 
+    MealPlans mealPlans;
+    
     while (true) {
         int choice;
         std::cout << "\nMain Menu:\n";
@@ -25,11 +27,11 @@ int main() {
 
         switch (choice) {
             case 1: {
-                int dietChoice;
                 std::string goal;
                 std::cout << "Enter your weight goal ('lose' or 'gain'): ";
                 std::cin >> goal;
-                displayMealPlan(goal);
+
+                mealPlans.displayMealPlan(goal);
                 break;
             }
 
