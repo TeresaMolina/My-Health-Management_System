@@ -1,101 +1,48 @@
 // meal_plans.cpp - Daniella
 #include "meal_plans.h"
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
 
 using namespace std;
 
-struct MealPlan {
-    string name;
-    string dietaryPreference;
-    string breakfast;
-    string lunch;
-    string dinner;
-    string snacks;
-};
-
-vector<MealPlan> getAllMealPlans() {
-    return { 
-        {
-            "Weight Loss Plan",
-            "Vegetarian",
-            "Oatmeal with fruits",
-            "Salad with chickpeas",
-            "Vegetable stir fry",
-            "Nuts and Fruit"
-        },
-        {
-            "Weight Gain Plan",
-            "None",
-            "Two scrambled eggs",
-            "Grilled chicken with rice",
-            "Beef stew with potatoes",
-            "Peanut butter sandwich"
-        },
-        {
-            "Vegan Muscle Gain Plan",
-            "Vegan",
-            "Tofu scramble with spinach",
-            "Lentil curry with quinoa",
-            "Black bean tacos", 
-            "Protein smoothie with almond butter"
-        }
-    };
+MealPlans::MealPlans(){
+    populateMealPlans();
 }
 
-void displayFilteredPlans(const string& preference) {
-    vector<MealPlan> plans = getAllMealPlans();
-    bool found = false;
+void MealPlans::populateMealPlans(){
+    //weight loss meal options
+    weightLossBreakfasts = {"Oatmeal with berries", "Greek yogurt with honey", "Smoothie with spinach and banana"};
+    weightLossLunches = {"Grilled chicken salad", "Quinoa and veggie bowl", "Turkey wrap with lettuce"};
+    weightLossDinners = {"Baked salmon with asparagus", "Grilled tofu with broccoli", "Chicken stir fry with brown rice"};
+    weightLossSnacks = {"Carrot sticks with hummus", "Apple slices", "Almonds"};
 
-    string prefLower = preference;
-    transform(prefLower.begin(), prefLower.end(), prefLower.begin(), ::tolower);
-    
-    cout << "\nAvailable Meal Plans for '" << preference << "':\n";
+    //weight gain meal options
+    weightGainBreakfasts = {"Peanut butter banana toast", "Eggs and avocado on toast", "Protein pancakes"};
+    weightGainLunches = {"Chicken and rice bowl", "Beef burrito", "Pasta with meat sauce"};
+    weightGainDinners = {"Steak with mashed potatoes", "Salmon with wild rice", "Chicken Afredo pasta"};
+    weightGainSnacks = {"Protein bars", "Trail mix", "Nut butter on crackers"};
+}
 
-    for (const auto& plan : plans) {
-        string planPrefLower = plan.dietaryPreference;
-        transform(planPrefLower.begin(), planPrefLower.end(), planPrefLower.begin(), ::tolower);
-
-        if (planPrefLower == prefLower || prefLower == "none") {
-            found = true;
-            cout << "\n=== " << plan.name << " ===\n";
-            cout << "Breakfast: " << plan.breakfast << endl;
-            cout << "Lunch: " << plan.lunch << endl;
-            cout << "Dinner: " << plan.dinner << endl;
-            cout << "Snacks: " << plan.snacks << endl;
-        }
-    }
-
-    if (!found) {
-        cout << "No meal plans found for this dietary preference.\n";
+void MealPlans::displayMealPlans(const string& goal) const {
+    cout << "=== Meal Plan for " << (goal == "gain" ? "Weight Gain" : "Weight Loss") << "===\n";
+    if (goal == "lose") {
+        displayMeals(weightLossBreakfasts, "Breakfast");
+        displayMeals(weightLossLunches, "Lunch");
+        displayMeals(weightLossDinners, "Dinner");
+        displayMeals(weightLossSnacks, "Snacks");
+    } else if (goal == "gain") {
+        displayMeals(weightGainBreakfasts, "Breakfast");
+        displayMeals(weightGainLunches, "Lunch");
+        displayMeals(weightGainDinners, "Dinner");
+        displayMeals(weightGainSnacks, "Snacks");
+    } else {
+        cout << "Invalid goal. Please choose 'lose' or 'gain'.\n";
     }
 }
 
-int main() {
-    int dietChoice;
-    string dietaryPreference;
-
-    cout << "Welcome to the Meal Plan\n";
-    cout << "Choose your dietary preference:\n";
-    cout << "1. None\n";
-    cout << "2. Vegetarian\n";
-    cout << "3. Vegan\n";
-    cout << "Enter your choice: ";
-    cin >> dietChoice;
-
-    switch (dietChoice) {
-        case 1: dietaryPreference = "None"; break;
-        case 2: dietaryPreference = "Vegetarian"; break;
-        case 3: dietaryPreference = "Vegan"; break; 
-        default:
-            cout << "Invalid choice. Defaulting to 'None'.\n";
-            dietaryPreference = "None";
-            break;
+void MealPlans::displayMeals(const vector<string>& meals, const string& type) const {
+    cout << type << " Options:\n";
+    for (const auto& meal : meals) {
+        cout << " - " << meal << "\n";
     }
-
-    displayFilteredPlans(dietaryPreference);
-
-    return 0;
+        cout << "\n";
 }
