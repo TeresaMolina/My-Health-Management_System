@@ -24,6 +24,12 @@ bool checkCredentials( const std::string& username, const std::string& password)
     std::ifstream file(USER_LOG);
     std::string storedUser, storedPass;
 
+    if (!file.is_open()) {
+        std::cerr << "Error opening file: " << USER_LOG << "\n";
+        return false;
+    }
+    
+
     std::string hashedPassword = hashPassword(password);
 
     while(file >> storedUser >> storedPass){
@@ -37,13 +43,13 @@ bool checkCredentials( const std::string& username, const std::string& password)
 
 bool login(){
 
-    //entering usernames and passwords
+//entering usernames and passwords
 std::string username, password;
 
-std::cout << "Enter Username";
+std::cout << "Enter Username: ";
 std::cin >> username;
 
-std::cout << "Enter Password";
+std::cout << "Enter Password: ";
 std::cin >> password;
 
     if(checkCredentials(username, password)){
@@ -63,6 +69,7 @@ std::cin >> password;
     }
 }
 
+//register user
 bool registerUser(){
     std::string username, password;
 
@@ -73,9 +80,13 @@ bool registerUser(){
     std::cin >> password;
 
     std::ofstream file(USER_LOG, std::ios::app);
-    file << username << " " << hashPassword(password) << "\n";
+    if (!file.is_open()) {
+        std::cerr << "Error opening file: " << USER_LOG << "\n";
+        return false;
+    }
 
-    std::cout << "\nRegistration Succesful.\n";
+    file << username << " " << hashPassword(password) << "\n";
+    std::cout << "\nRegistration Successful.\n";
 
     return true;
 }

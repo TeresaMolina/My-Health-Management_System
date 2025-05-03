@@ -1,48 +1,56 @@
-//main.cpp - Teresa
+// main.cpp - Teresa
+#include "../Meal_Plans/meal_plans.h"
+#include "../Workouts/workouts.h"
+#include "../Calorie_Tracker/calorie_tracker.h"
+#include "../Authentication/authy.h"
+#include <iostream>
 
-#include "meal_plans.h"
-#include "workouts.h"
-#include "calorie_tracker.h"
-#include "authy.h"
-#include <iostream>;
+int main() {
+    std::cout << "=== Welcome to the Health Management System ===\n";
 
+    if (!login()) {
+        std::cout << "\nWe're Sorry...We couldn't Log In...Exiting...\n";
+        return 0;
+    }
 
+    MealPlans mealPlans;
+    
+    while (true) {
+        int choice;
+        std::cout << "\nMain Menu:\n";
+        std::cout << "1. Meal Plan Options\n";
+        std::cout << "2. Workout Suggestions\n";
+        std::cout << "3. Track My Calories\n";
+        std::cout << "4. Exit\n";
+        std::cout << "Enter your choice: ";
+        std::cin >> choice;
 
-int main(){
+        switch (choice) {
+            case 1: {
+                std::string goal;
+                std::cout << "Enter your weight goal ('lose' or 'gain'): ";
+                std::cin >> goal;
 
-	if (!login()){
-		std::cout << "\nWe're Sorry...We couldn't Log In...Exiting...\n";
-		return 0;
-	}
+                mealPlans.displayMealPlan(goal);
+                break;
+            }
 
+            case 2:
+                suggestWorkouts();
+                break;
 
+            case 3:
+                trackCalories();
+                break;
 
-	while (true){
-	
-int choice;
-		std::cout << "\nWelcome to the App Menu: \n";
-		std::cout << "\n1. Meal Plan Options\n 2. Workout Suggestions\n 3. Track My Calories\n 4. Exit\n";
-		std::cout << "\nPlease Enter Your Choice\n";
-		std::cin >> choice;
+            case 4:
+                std::cout << "\nThanks for using the Health Management System. Goodbye!\n";
+                return 0;
 
-	switch (choice){
-		case 1:
-			displayMealPlans();
-			break;
+            default:
+                std::cout << "\nInvalid choice. Please try again.\n";
+        }
+    }
 
-		case 2: 
-			suggestWorkouts();
-			break;
-
-		case 3:
-			trackCalories();
-			break;
-
-		case 4:
-			std::cout << "\n...Exiting...\n";
-			return 0;
-		default:
-			std::cout << "\nInvalid Choice. Please Try Again.\n";
-		}
-	}
+    return 0;
 }
