@@ -1,0 +1,10 @@
+^C:\USERS\TERES\DOCUMENTS\MY-HEALTH-MANAGEMENT_SYSTEM-MAIN\SE_HEALTHAPP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/teres/Documents/My-Health-Management_System-main/SE_HealthApp -BC:/Users/teres/Documents/My-Health-Management_System-main/SE_HealthApp/build --check-stamp-file C:/Users/teres/Documents/My-Health-Management_System-main/SE_HealthApp/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

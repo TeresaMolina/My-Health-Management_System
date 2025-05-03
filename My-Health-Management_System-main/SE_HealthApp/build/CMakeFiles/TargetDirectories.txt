@@ -1,0 +1,3 @@
+C:/Users/teres/Documents/My-Health-Management_System-main/SE_HealthApp/build/CMakeFiles/HealthApp.dir
+C:/Users/teres/Documents/My-Health-Management_System-main/SE_HealthApp/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/teres/Documents/My-Health-Management_System-main/SE_HealthApp/build/CMakeFiles/ZERO_CHECK.dir
