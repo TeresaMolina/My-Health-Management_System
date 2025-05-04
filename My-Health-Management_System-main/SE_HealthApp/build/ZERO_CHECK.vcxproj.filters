@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\teres\Documents\My-Health-Management_System-main\SE_HealthApp\build\CMakeFiles\8deda4476856ceb956795c57a3095b97\generate.stamp.rule">
+    <CustomBuild Include="C:\Users\teres\Documents\Software-Engineering\My-Health-Management_System\My-Health-Management_System-main\SE_HealthApp\build\CMakeFiles\a60f19a68f7cb740fe2cf103f1de913c\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{BF3F95EF-A81D-39CB-AA28-3B8B7DE9D404}</UniqueIdentifier>
+      <UniqueIdentifier>{F4AA2955-9A8D-30B1-A34A-FD0E0BCDF95D}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

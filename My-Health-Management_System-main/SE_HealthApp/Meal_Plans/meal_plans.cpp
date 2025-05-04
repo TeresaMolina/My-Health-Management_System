@@ -1,5 +1,6 @@
 // meal_plans.cpp - Daniella
 #include "meal_plans.h"
+#include <string>
 #include <iostream>
 
 // using namespace std;

@@ -1,6 +1,6 @@
-^C:\USERS\TERES\DOCUMENTS\MY-HEALTH-MANAGEMENT_SYSTEM-MAIN\SE_HEALTHAPP\BUILD\CMAKEFILES\8DEDA4476856CEB956795C57A3095B97\GENERATE.STAMP.RULE
+^C:\USERS\TERES\DOCUMENTS\SOFTWARE-ENGINEERING\MY-HEALTH-MANAGEMENT_SYSTEM\MY-HEALTH-MANAGEMENT_SYSTEM-MAIN\SE_HEALTHAPP\BUILD\CMAKEFILES\A60F19A68F7CB740FE2CF103F1DE913C\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/teres/Documents/My-Health-Management_System-main/SE_HealthApp -BC:/Users/teres/Documents/My-Health-Management_System-main/SE_HealthApp/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/teres/Documents/My-Health-Management_System-main/SE_HealthApp/build/HealthApp.sln
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/teres/Documents/Software-Engineering/My-Health-Management_System/My-Health-Management_System-main/SE_HealthApp -BC:/Users/teres/Documents/Software-Engineering/My-Health-Management_System/My-Health-Management_System-main/SE_HealthApp/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/teres/Documents/Software-Engineering/My-Health-Management_System/My-Health-Management_System-main/SE_HealthApp/build/HealthApp.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

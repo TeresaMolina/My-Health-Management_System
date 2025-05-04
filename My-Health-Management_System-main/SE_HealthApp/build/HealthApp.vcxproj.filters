@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\teres\Documents\My-Health-Management_System-main\SE_HealthApp\main.cpp">
+    <ClCompile Include="C:\Users\teres\Documents\Software-Engineering\My-Health-Management_System\My-Health-Management_System-main\SE_HealthApp\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\teres\Documents\My-Health-Management_System-main\SE_HealthApp\Authentication\authy.cpp">
+    <ClCompile Include="C:\Users\teres\Documents\Software-Engineering\My-Health-Management_System\My-Health-Management_System-main\SE_HealthApp\Authentication\authy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\teres\Documents\My-Health-Management_System-main\SE_HealthApp\Calorie_Tracker\calorie_tracker.cpp">
+    <ClCompile Include="C:\Users\teres\Documents\Software-Engineering\My-Health-Management_System\My-Health-Management_System-main\SE_HealthApp\Calorie_Tracker\calorie_tracker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\teres\Documents\My-Health-Management_System-main\SE_HealthApp\Meal_Plans\meal_plans.cpp">
+    <ClCompile Include="C:\Users\teres\Documents\Software-Engineering\My-Health-Management_System\My-Health-Management_System-main\SE_HealthApp\Meal_Plans\meal_plans.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\teres\Documents\My-Health-Management_System-main\SE_HealthApp\Workouts\workouts.cpp">
+    <ClCompile Include="C:\Users\teres\Documents\Software-Engineering\My-Health-Management_System\My-Health-Management_System-main\SE_HealthApp\Workouts\workouts.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\teres\Documents\My-Health-Management_System-main\SE_HealthApp\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\teres\Documents\Software-Engineering\My-Health-Management_System\My-Health-Management_System-main\SE_HealthApp\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{663416AE-8FE8-3F65-B614-345FA7E92B43}</UniqueIdentifier>
+      <UniqueIdentifier>{B9CAE897-3557-3BF7-BFA5-25C1509451A4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
