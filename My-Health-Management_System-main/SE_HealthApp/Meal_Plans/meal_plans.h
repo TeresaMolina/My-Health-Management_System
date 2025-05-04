@@ -8,7 +8,7 @@
 class MealPlans {
 public:
 	MealPlans();
-	void displayMealPlans(const std::string& goal) const;
+	void displayMealPlans(const std::string& goal, const std::string& preference) const;
 
 private:
 	std::vector<std::string> weightLossBreakfasts;
@@ -20,6 +20,10 @@ private:
 	std::vector<std::string> weightGainLunches;
 	std::vector<std::string> weightGainDinners;
 	std::vector<std::string> weightGainSnacks;
+
+	std::vector<std::string> vegetarianMeals;
+   	std::vector<std::string> ketoMeals;
+   	std::vector<std::string> veganMeals;
 
 	void populateMealPlans();
 	void displayMeals(const std::vector<std::string>& meals, const std::string& type) const;
