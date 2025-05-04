@@ -5,6 +5,7 @@
 #include "authy.h"
 
 #include <iostream>
+#include <string>
 
 int main() {
     std::cout << "=== Welcome to the Health Management System ===\n";
@@ -29,8 +30,17 @@ int main() {
         switch (choice) {
             case 1: {
                 std::string goal;
+                std::string preference;
+                
                 std::cout << "Enter your weight goal ('lose' or 'gain'): ";
                 std::cin >> goal;
+
+                std::cout << "Enter your dietary preference ('none', 'vegetarian', 'keto', 'vegan'): ";
+                std::cin >> preference;
+
+                if (preference == 'none'){
+                    preference = "";
+                }
 
                 mealPlans.displayMealPlans(goal);
                 break;
